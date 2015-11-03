@@ -38,3 +38,17 @@ main{
     @include buttonSize;
   }
 }
+
+  #menu{
+
+   a{
+     text-decoration: none;
+   }
+  }
+
+  .settingArea{
+    a{
+      text-decoration: none;
+      color:white;
+    }
+  }

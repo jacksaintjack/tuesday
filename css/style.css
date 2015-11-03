@@ -58,3 +58,10 @@ main {
     color: white; }
     #screen #settings:last-child {
       margin-right: 0; }
+
+#menu a {
+  text-decoration: none; }
+
+.settingArea a {
+  text-decoration: none;
+  color: white; }

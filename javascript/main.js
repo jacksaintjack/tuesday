@@ -6,7 +6,20 @@ var playView = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template());
+    this.$el.addClass('play'); // testing added classes
+    this.$el.css({
+      'position': 'relative',
+      'top': '4em',
+      'margin': '0em 0 0 8em',
+      "width": "45em",
+      "height": "50em",
+      'background-image': 'url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGzKlpX4R6nr8xzkHSGuMzA8ORxU_5m-oCqUNjeME614JoqDPFxmAis1A")',
+      'background-size': 'contain',
+      'background-repeat': 'no-repeat'
+    });
+
   }
+
 });
 
 // View for play page
@@ -17,6 +30,12 @@ var highscoreView = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template());
+    this.$el.css({
+      "position": "relative",
+      "top": "6em",
+      "font-size": "1.9em",
+      "text-align": 'center',
+    })
   }
 });
 
@@ -28,6 +47,12 @@ var settingsView = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template());
+    this.$el.css({
+      "position": "relative",
+      "top": "6em",
+      "font-size": "1.9em",
+      "text-align": 'center',
+    })
   }
 });
 
@@ -40,7 +65,7 @@ var gameRouter = Backbone.Router.extend({
     "highscores": "highscores",
     "settings": "settings"
   },
-//Trying it in the Router 
+//Trying it in the Router for fun
   menu:function(){
     $('#screen').html('');
     $('#screen').append('<span class="loading">  Loading... </span>');
@@ -48,9 +73,10 @@ var gameRouter = Backbone.Router.extend({
     ('<section id="menu"><a href="#/play" id="play"> Play </a> <a href="#/highscores" id="score"> High Score </a> <a href="#/settings" id="settings"> Settings </button></section>')
     setTimeout(function(){
       $(".loading").css('display', 'none')
-      $("#menu").css({'display': 'block', 'padding-top': '10em'})
+      $("#menu").css({'display': 'block', 'padding-top': '13em'})
     }, 4000);
 },
+
 //Below use the view method
   play: function() {
     var view = new playView();
@@ -69,8 +95,6 @@ var gameRouter = Backbone.Router.extend({
     settingView.render();
     $('#screen').html(settingView.$el);
   }
-
-
 
 });
 
