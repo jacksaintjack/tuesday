@@ -1,6 +1,40 @@
-section{
+@import '../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
+@import '../bower_components/neat/app/assets/stylesheets/_neat.scss';
+
+@mixin buttonSize{
   @include span-columns(12);
+  font-size:2em;
+  font-weight: bolder;
+  color:white;
+}
+
+main{
+  @include outer-container(60%);
   margin-top:10em;
-  border-radius: 10px;
-  background-color:black;
+  border-radius: 8em;
+  background:black;
+  height:33em;
+}
+
+#screen{
+  color:white;
+  text-align:center;
+
+  .loading{
+    position:relative;
+    font-size:2em;
+    top:8em;
+  }
+  #menu{
+    display:none;
+  }
+  #play{
+    @include buttonSize;
+  }
+  #score{
+    @include buttonSize;
+  }
+  #settings{
+    @include buttonSize;
+  }
 }
